@@ -4,14 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PumlClass extends Element {
-    private final List<String> fields = new ArrayList<>();
-    private final List<String> methods = new ArrayList<>();
+    private String name;
+    private List<String> fields;
+    private List<String> methods;
 
     public PumlClass() {
         super("class");
     }
 
-    public void addField(String field) {
+    public PumlClass(String name, List<String> fields, List<String> methods) {
+        super("class");
+        this.name = name;
+        this.fields = fields;
+        this.methods = methods;
+    }
+
+    public void setFields(String field) {
         this.fields.add(field);
     }
 
@@ -25,5 +33,8 @@ public class PumlClass extends Element {
 
     public List<String> getMethods() {
         return this.methods;
+    }
+    public String getName() {
+        return this.name;
     }
 }

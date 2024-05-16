@@ -5,5 +5,5 @@ import com.converter.puml.element.Element;
 import java.util.List;
 
 public interface Parser {
-    List<Element> parse(String content);
+    List<Element> parse();
 }
